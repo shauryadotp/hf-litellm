@@ -1,0 +1,130 @@
+model_list:
+
+# GEMINI
+  - model_name: "gemini-3-flash-preview"
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: os.environ/GOOGLE
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+
+  - model_name: "gemini-2.5-flash"
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_key: os.environ/UNI_API_KEY
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+
+  - model_name: "gemini-flash-latest"
+    litellm_params:
+      model: gemini/gemini-flash-latest
+      api_key: os.environ/UNI_API_KEY
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+
+  - model_name: "gemini-flash-lite-latest"
+    litellm_params:
+      model: gemini/gemini-flash-lite-latest
+      api_key: os.environ/UNI_API_KEY
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+
+# KIMI - NVIDIA
+  - model_name: "kimi-k2.5-thinking"
+    litellm_params:
+      model: nvidia_nim/moonshotai/kimi-k2.5
+      api_key: os.environ/UNI_API_KEY
+
+  - model_name: "kimi-k2.5-instant"
+    litellm_params:
+      model: nvidia_nim/moonshotai/kimi-k2.5
+      api_key: os.environ/UNI_API_KEY
+      temperature: 0.6
+      top_p: 0.95
+      extra_body:
+        chat_template_kwargs:
+          thinking: false
+
+  - model_name: "kimi-k2-instant"
+    litellm_params:
+      model: nvidia_nim/moonshotai/kimi-k2-instruct-0905
+      api_key: os.environ/UNI_API_KEY
+
+  - model_name: "kimi-k2-thinking"
+    litellm_params:
+      model: nvidia_nim/moonshotai/kimi-k2-thinking
+      api_key: os.environ/UNI_API_KEY
+
+# KIMI - OLLAMA
+  - model_name: "kimi-k2.5-thinking"
+    litellm_params:
+      model: openai/moonshotai/kimi-k2.5
+      api_base: https://ollama.com/v1
+      api_key: os.environ/UNI_API_KEY
+
+  - model_name: "kimi-k2.5-instant"
+    litellm_params:
+      model: openai/moonshotai/kimi-k2.5
+      api_base: https://ollama.com/v1
+      api_key: os.environ/UNI_API_KEY
+      temperature: 0.6
+      top_p: 0.95
+      think: false
+      
+  - model_name: "kimi-k2-instant"
+    litellm_params:
+      model: openai/moonshotai/kimi-k2-instruct-0905
+      api_base: https://ollama.com/v1
+      api_key: os.environ/UNI_API_KEY
+
+  - model_name: "kimi-k2-thinking"
+    litellm_params:
+      model: openai/moonshotai/kimi-k2-thinking
+      api_base: https://ollama.com/v1
+      api_key: os.environ/UNI_API_KEY
+
+
+# DEEPSEEK - NVIDIA
+  - model_name: "deepseek-v3.1-terminus"
+    litellm_params:
+      model: nvidia_nim/deepseek-ai/deepseek-v3.1-terminus
+      api_key: os.environ/UNI_API_KEY
+
+# CEREBRAS
+  - model_name: "gpt-oss-120b"
+    litellm_params:
+      model: cerebras/gpt-oss-120b
+      api_key: os.environ/CEREBRAS
+
+
+
+general_settings:
+  master_key: os.environ/MASTER

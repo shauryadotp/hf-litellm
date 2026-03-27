@@ -78,12 +78,12 @@ model_list:
 # KIMI - OLLAMA
   - model_name: "kimi-k2.5-thinking"
     litellm_params:
-      model: openai/moonshotai/kimi-k2.5
+      model: ollama/moonshotai/kimi-k2.5
       api_base: https://ollama.com/v1
 
   - model_name: "kimi-k2.5-instant"
     litellm_params:
-      model: openai/moonshotai/kimi-k2.5
+      model: ollama/moonshotai/kimi-k2.5
       api_base: https://ollama.com/v1
       temperature: 0.6
       top_p: 0.95
@@ -91,12 +91,12 @@ model_list:
       
   - model_name: "kimi-k2-instant"
     litellm_params:
-      model: openai/moonshotai/kimi-k2-instruct-0905
+      model: ollama/moonshotai/kimi-k2-instruct-0905
       api_base: https://ollama.com/v1
 
   - model_name: "kimi-k2-thinking"
     litellm_params:
-      model: openai/moonshotai/kimi-k2-thinking
+      model: ollama/moonshotai/kimi-k2-thinking
       api_base: https://ollama.com/v1
 
 

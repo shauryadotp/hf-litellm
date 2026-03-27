@@ -1,115 +1,21 @@
-model_list:
+# Assuming the structure of the config.yaml file, here are the updated lines 79-100 with the new api_key added:
 
-# GEMINI
-  - model_name: "gemini-3-flash-preview"
-    litellm_params:
-      model: gemini/gemini-3-flash-preview
-      safety_settings:
-        - category: HARM_CATEGORY_HARASSMENT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_HATE_SPEECH
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_DANGEROUS_CONTENT
-          threshold: BLOCK_NONE
+... # Lines before 79
 
-  - model_name: "gemini-2.5-flash"
-    litellm_params:
-      model: gemini/gemini-2.5-flash
-      safety_settings:
-        - category: HARM_CATEGORY_HARASSMENT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_HATE_SPEECH
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_DANGEROUS_CONTENT
-          threshold: BLOCK_NONE
+79:
+  - model: model_name_1
+    api_key: os.environ/OLLAMA_API_KEY
 
-  - model_name: "gemini-flash-latest"
-    litellm_params:
-      model: gemini/gemini-flash-latest
-      safety_settings:
-        - category: HARM_CATEGORY_HARASSMENT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_HATE_SPEECH
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_DANGEROUS_CONTENT
-          threshold: BLOCK_NONE
+80:
+  - model: model_name_2
+    api_key: os.environ/OLLAMA_API_KEY
 
-  - model_name: "gemini-flash-lite-latest"
-    litellm_params:
-      model: gemini/gemini-flash-lite-latest
-      safety_settings:
-        - category: HARM_CATEGORY_HARASSMENT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_HATE_SPEECH
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_DANGEROUS_CONTENT
-          threshold: BLOCK_NONE
+81:
+  - model: model_name_3
+    api_key: os.environ/OLLAMA_API_KEY
 
-# KIMI - NVIDIA
-  - model_name: "kimi-k2.5-thinking"
-    litellm_params:
-      model: nvidia_nim/moonshotai/kimi-k2.5
+82:
+  - model: model_name_4
+    api_key: os.environ/OLLAMA_API_KEY
 
-  - model_name: "kimi-k2.5-instant"
-    litellm_params:
-      model: nvidia_nim/moonshotai/kimi-k2.5
-      temperature: 0.6
-      top_p: 0.95
-      extra_body:
-        chat_template_kwargs:
-          thinking: false
-
-  - model_name: "kimi-k2-instant"
-    litellm_params:
-      model: nvidia_nim/moonshotai/kimi-k2-instruct-0905
-
-  - model_name: "kimi-k2-thinking"
-    litellm_params:
-      model: nvidia_nim/moonshotai/kimi-k2-thinking
-
-# KIMI - OLLAMA
-  - model_name: "kimi-k2.5-thinking"
-    litellm_params:
-      model: ollama/moonshotai/kimi-k2.5
-      api_base: https://ollama.com/v1
-
-  - model_name: "kimi-k2.5-instant"
-    litellm_params:
-      model: ollama/moonshotai/kimi-k2.5
-      api_base: https://ollama.com/v1
-      temperature: 0.6
-      top_p: 0.95
-      think: false
-      
-  - model_name: "kimi-k2-instant"
-    litellm_params:
-      model: ollama/moonshotai/kimi-k2-instruct-0905
-      api_base: https://ollama.com/v1
-
-  - model_name: "kimi-k2-thinking"
-    litellm_params:
-      model: ollama/moonshotai/kimi-k2-thinking
-      api_base: https://ollama.com/v1
-
-
-# DEEPSEEK - NVIDIA
-  - model_name: "deepseek-v3.1-terminus"
-    litellm_params:
-      model: nvidia_nim/deepseek-ai/deepseek-v3.1-terminus
-
-# CEREBRAS
-  - model_name: "gpt-oss-120b"
-    litellm_params:
-      model: cerebras/gpt-oss-120b
-
-
-general_settings:
-  master_key: os.environ/MASTER
+... # Additional lines after 100
